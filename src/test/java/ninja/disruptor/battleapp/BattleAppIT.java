@@ -13,7 +13,7 @@ import static org.junit.Assert.assertThat;
 public class BattleAppIT {
 
     @Rule
-    public JAXRSClientProvider provider = buildWithURI("http://disruptor.ninja:31080/battleapp/resources/users");
+    public JAXRSClientProvider provider = buildWithURI("http://" + System.getenv("HOST") + ":" + System.getenv("PORT") + "/battleapp/resources/users");
 
     @Test
     public void shouldReturn200() {
